@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Quantum Trust Bank | Надежный Цифровой Банкинг</title>
+    <meta name="description" content="Quantum Trust Bank - Ваш партнер в безопасном управлении цифровым капиталом.">
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;700&display=swap" rel="stylesheet">
+</head>
+
+<body>
+    <div id="app">
+        <!-- Секция Входа -->
+        <section id="login-section" class="active">
+            <div class="glass-card">
+                <div class="brand">
+                    <div class="logo-icon">Q</div>
+                    <h1>Quantum Trust</h1>
+                </div>
+                <p class="subtitle">Управление Цифровым Капиталом</p>
+                <form id="login-form">
+                    <div class="input-group">
+                        <label for="username">Имя пользователя</label>
+                        <input type="text" id="username" placeholder="Введите имя пользователя" required>
+                    </div>
+                    <div class="input-group">
+                        <label for="password">Пароль</label>
+                        <input type="password" id="password" placeholder="Введите пароль" required>
+                    </div>
+                    <button type="submit" id="login-btn">Аутентификация</button>
+                    <p id="error-msg" class="error"></p>
+                </form>
+                <div class="hacker-tools-trigger">
+                    <button id="show-hacker-tools-btn" class="text-btn">🚀 Инструменты Пентеста (Brute Force)</button>
+                </div>
+                <div class="security-notice">
+                    <p>Защищено 256-битным Квантовым Шифрованием</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Секция Дашборда -->
+        <section id="dashboard-section">
+            <nav class="top-nav">
+                <div class="brand">
+                    <div class="logo-icon">Q</div>
+                    <span>Quantum Trust</span>
+                </div>
+                <div class="user-info">
+                    <span>Добро пожаловать, Проводник</span>
+                    <button id="logout-btn">Безопасный Выход</button>
+                </div>
+            </nav>
+            <main class="dashboard-content">
+                <div class="balance-card glass-card">
+                    <h2>Общий Доступный Баланс</h2>
+                    <div class="amount-display">
+                        <span class="currency">$</span>
+                        <span id="balance-amount">1,000,000.00</span>
+                    </div>
+                    <p class="status">Статус счета: <span class="active-status">Активен</span></p>
+                </div>
+
+                <div class="actions-grid">
+                    <div class="action-card glass-card">
+                        <h3>Быстрый Перевод</h3>
+                        <p>Перевести все средства на ваш основной внешний счет.</p>
+                        <button id="transfer-btn" class="primary-btn">Перевести все себе</button>
+                    </div>
+                    <div class="action-card glass-card">
+                        <h3>Последние Операции</h3>
+                        <ul class="activity-list">
+                            <li><span>Депозит - Внешний Перевод</span> <span class="positive">+$1,000,000.00</span></li>
+                            <li><span>Счет Верифицирован</span> <span class="neutral">Успешно</span></li>
+                        </ul>
+                    </div>
+                </div>
+            </main>
+        </section>
+
+        <!-- Консоль Хакера -->
+        <div id="hacker-console" class="modal">
+            <div class="console-card glass-card">
+                <div class="console-header">
+                    <div class="console-status">
+                        <span class="pulse-dot"></span>
+                        <span>ТЕРМИНАЛ: BRUTEFORCE_V2.0_RUST</span>
+                    </div>
+                    <button id="close-console" class="close-x">&times;</button>
+                </div>
+
+                <div class="stats-bar">
+                    <div class="stat">
+                        <label>СТАТУС</label>
+                        <span id="hack-status">ОЖИДАНИЕ</span>
+                    </div>
+                    <div class="stat">
+                        <label>ПОПЫТКИ</label>
+                        <span id="hack-attempts">0</span>
+                    </div>
+                    <div class="stat">
+                        <label>СКОРОСТЬ</label>
+                        <span id="hack-speed">0 req/s</span>
+                    </div>
+                </div>
+
+                <div class="log-container">
+                    <div id="hack-logs" class="logs"></div>
+                </div>
+
+                <div class="console-footer">
+                    <div class="current-attempt">
+                        <label>ПРОВЕРКА:</label>
+                        <span id="current-target">...</span>
+                    </div>
+                    <button id="start-hack-btn" class="hacker-btn">ЗАПУСК АТАКИ</button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Модальное окно перевода -->
+        <div id="transfer-modal" class="modal">
+            <div class="modal-content glass-card">
+                <h2>Перевод средств</h2>
+                <p>Введите номер телефона получателя для перевода всех средств ($1,000,000.00).</p>
+                <div class="input-group">
+                    <label for="phone-number">Номер телефона</label>
+                    <input type="tel" id="phone-number" placeholder="+7 (900) 000-00-00" required>
+                </div>
+                <div class="modal-actions">
+                    <button id="confirm-transfer-btn" class="primary-btn">Подтвердить перевод</button>
+                    <button id="cancel-transfer-btn" class="text-btn">Отмена</button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Модальное окно Успеха -->
+        <div id="success-modal" class="modal">
+            <div class="modal-content glass-card">
+                <div class="success-icon">✓</div>
+                <h2>Перевод Успешен</h2>
+                <p>Все средства были успешно переведены на номер: <strong id="target-phone-display"></strong></p>
+                <button id="close-modal">Вернуться на Дашборд</button>
+            </div>
+        </div>
+    </div>
+    <script src="script.js"></script>
+</body>
+
+</html>
